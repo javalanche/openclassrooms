@@ -12,7 +12,8 @@ var server = http.createServer(function(req, res) {
 		res.write('Your name is ' + params['firstname'] + ' ' + params['lastname']);
 	}
 	else {
-		res.write('You do have a first name and a last name, don\'t you?');
+		res.write('Enter you firs and last name like this in URL: ');
+		res.write('http://localhost:8080?firstname=John&lastname=Doe');
 	}
 	res.end();
 });

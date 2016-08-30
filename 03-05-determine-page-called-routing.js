@@ -18,7 +18,7 @@ var server = http.createServer(function(req, res) {
 	}
 	else{
 		res.writeHead(404);
-		console.log('should have seen error');
+		console.log('ERROR');
 	}
 	res.end();
 });
