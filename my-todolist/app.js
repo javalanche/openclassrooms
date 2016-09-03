@@ -28,7 +28,7 @@ app.use(session({
 	res.setHeader('Content-type','text/plain');
 	res.end();
 })
-.use(function(req,res,next)[
+.use(function(req,res,next){	
 	res.setHeader('Content-type','text/plain');
-])
+})
 ;
