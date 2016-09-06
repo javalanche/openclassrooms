@@ -22,6 +22,10 @@ io.sockets.on('connection', function (socket) {
 	console.log('A client is connected!');	
 	socket.emit('message','You are connected!');
 	socket.emit('message', { content: 'hi javier, sent with object', importance: '1' });
+
+	socket.on('message', function (message) {
+		console.log('A client is speaking to me. They\'re saying: ', message);
+	});
 });
 
 server.listen(8080);

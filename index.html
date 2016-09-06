@@ -7,7 +7,9 @@
 		
 	</head>
 	<body>
+
 		<h1>Communication with Socket.io</h1>
+		<button class="button" type="submit">click me</button>
 
 		<script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" charset="utf-8">
@@ -18,7 +20,13 @@
 				}else{
 					alert('This message is for you: ' +  message);
 				}
-			})
+			});
+			var button = document.getElementsByClassName('button');
+			console.log('here is the button : ',button)
+			button[0].addEventListener('click', function(){
+				socket.emit('message','Hi server, you clicked me. did you like it?');
+			});
 		</script>
+
 	</body>
 </html>
