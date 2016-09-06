@@ -16,13 +16,14 @@
 			var socket = io.connect('http://localhost:8080');
 			socket.on('message', function(message){
 				if(message !== null && typeof message === 'object'){
-					alert('This message is for you: ' +  message.content);
+					// alert('This message is for you: ' +  message.content);
+					console.log('This message is for you: ' ,  message.content);
 				}else{
-					alert('This message is for you: ' +  message);
+					// alert('This message is for you: ' +  message);
+					console.log('This message is for you: ' ,  message);
 				}
 			});
 			var button = document.getElementsByClassName('button');
-			console.log('here is the button : ',button)
 			button[0].addEventListener('click', function(){
 				socket.emit('message','Hi server, you clicked me. did you like it?');
 			});
