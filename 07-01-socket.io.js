@@ -24,9 +24,16 @@ io.sockets.on('connection', function (socket) {
 	socket.emit('message', { content: 'hi javier, sent with object', importance: '1' });
 	socket.broadcast.emit('message','Another client has just connected.');
 
-	socket.on('message', function (message) {
-		console.log('A client is speaking to me. They\'re saying: ', message);
+	socket.on('new-connection', function (username) {
+		socket.username = username;
 	});
+
+	socket.on('message', function (message) {
+		console.log(socket.username, ' client is speaking to me. They\'re saying: ', message);
+
+	});
+
+
 });
 
 server.listen(8080);

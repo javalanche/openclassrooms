@@ -27,6 +27,9 @@
 			button[0].addEventListener('click', function(){
 				socket.emit('message','Hi server, you clicked me. did you like it?');
 			});
+
+			var username = prompt('What is your username?:');
+			socket.emit('new-connection',username);
 		</script>
 
 	</body>
